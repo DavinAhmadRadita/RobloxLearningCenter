@@ -1,0 +1,77 @@
+
+/* Guest access gate: full-screen blur includes the sidebar */
+.guest-gate-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(3, 9, 23, .58);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+}
+.guest-gate-backdrop[hidden] { display: none !important; }
+.guest-gate-backdrop.is-visible { opacity: 1; }
+.guest-gate-dialog {
+  position: relative;
+  width: min(620px, 100%);
+  padding: 58px 44px 48px;
+  border: 1px solid #1764d8;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(10, 24, 47, .98), rgba(7, 18, 38, .98));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .5), 0 0 40px rgba(0, 95, 255, .12);
+  text-align: center;
+  font-family: Inter, Arial, sans-serif;
+}
+.guest-gate-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #f7faff;
+  cursor: pointer;
+  padding: 0;
+}
+.guest-gate-close:hover { background: transparent; color: #78b7ff; }
+.guest-gate-close svg { width: 26px; height: 26px; stroke-width: 2.5; }
+.guest-gate-dialog h2 {
+  margin: 8px 26px 16px;
+  color: #f4f7ff;
+  font: 900 clamp(23px, 3vw, 31px)/1.4 Inter, Arial, sans-serif;
+  letter-spacing: .2px;
+}
+.guest-gate-dialog p {
+  max-width: 470px;
+  margin: 0 auto 28px;
+  color: #b8c9e5;
+  font: 400 16px/1.75 Inter, Arial, sans-serif;
+}
+.guest-gate-submit {
+  min-width: 245px;
+  min-height: 58px;
+  padding: 15px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(110deg, #1677ff, #0758ed);
+  box-shadow: 0 8px 26px rgba(0, 89, 255, .24);
+  color: #fff;
+  font: 800 16px Inter, Arial, sans-serif;
+  cursor: pointer;
+}
+.guest-gate-submit:hover { filter: brightness(1.05); }
+body.guest-gate-open { overflow: hidden; }
+@media (max-width: 600px) {
+  .guest-gate-backdrop { padding: 16px; }
+  .guest-gate-dialog { padding: 58px 22px 30px; border-radius: 22px; }
+  .guest-gate-dialog h2 { margin-inline: 0; font-size: 23px; }
+  .guest-gate-dialog p { font-size: 14px; }
+  .guest-gate-submit { width: 100%; min-width: 0; }
+}

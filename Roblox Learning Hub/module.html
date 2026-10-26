@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul | Roblox Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/guest-gate.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/module.css" />
+</head>
+
+<body data-page="Modul">
+  <div id="dashboard-view" class="app-shell dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand dashboard-brand" aria-label="Roblox Learning Center">
+        <span class="roblox-mark"><span></span></span>
+        <span class="brand-name">ROBLOX LEARNING<br />CENTER</span>
+      </div>
+      <button class="profile profile-link" id="profile" type="button" aria-label="Open profile">
+        <div class="avatar" id="avatar">U</div>
+        <div class="profile-name" id="profile-name">USERNAME</div>
+        <div class="profile-handle" id="profile-handle">@username</div>
+      </button>
+      <nav class="navigation" aria-label="Dashboard navigation">
+        <button class="nav-item" type="button" data-page="Dashboard">
+          <span class="nav-icon"><i data-lucide="house" aria-hidden="true"></i></span><span>DASHBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Modul">
+          <span class="nav-icon"><i data-lucide="book-open" aria-hidden="true"></i></span><span>MODUL</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Leaderboard">
+          <span class="nav-icon"><i data-lucide="trophy" aria-hidden="true"></i></span><span>LEADERBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Forum">
+          <span class="nav-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>FORUM</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Challenges">
+          <span class="nav-icon"><i data-lucide="flag" aria-hidden="true"></i></span><span>CHALLENGES</span>
+        </button>
+      </nav>
+      <button class="login-button" id="dashboard-auth-button" type="button">
+        MASUK/DAFTAR
+      </button>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1>MODUL</h1>
+      </header>
+      <section class="module-page" aria-labelledby="module-page-title">
+        <div class="module-intro">
+          <div>
+            <p class="module-eyebrow">
+              <i data-lucide="graduation-cap" aria-hidden="true"></i> LEARNING
+              CENTER
+            </p>
+            <h2 id="module-page-title">Modul Pembelajaran</h2>
+            <p class="module-subtitle">
+              Pelajari Roblox Studio dari dasar, satu langkah setiap kali.
+            </p>
+          </div>
+          <div class="module-intro-icon" aria-hidden="true">
+            <i data-lucide="book-open"></i>
+          </div>
+        </div>
+
+        <div class="module-summary" aria-label="Ringkasan modul">
+          <div class="module-stat">
+            <span class="module-stat-icon blue"><i data-lucide="layers"></i></span>
+            <div><strong>6</strong><span>Total Modul</span></div>
+          </div>
+          <div class="module-stat">
+            <span class="module-stat-icon green"><i data-lucide="circle-check"></i></span>
+            <div>
+              <strong id="completed-module-count">0</strong><span>Modul Selesai</span>
+            </div>
+          </div>
+          <div class="module-stat">
+            <span class="module-stat-icon violet"><i data-lucide="chart-no-axes-column-increasing"></i></span>
+            <div>
+              <strong id="overall-module-progress">0%</strong><span>Progres Belajar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-list-heading">
+          <div>
+            <h3>Daftar Modul</h3>
+            <p>Pilih modul untuk melihat materi di dalamnya.</p>
+          </div>
+          <span class="module-list-count">6 MODUL</span>
+        </div>
+
+        <div class="module-list" id="module-list">
+          <article class="module-card" data-module="1">
+            <button class="module-card-toggle" type="button" aria-expanded="false" aria-controls="module-lessons-1">
+              <span class="module-number">01</span><span class="module-card-main"><span
+                  class="module-card-kicker">FUNDAMENTAL</span><strong>Pengenalan Roblox</strong><span
+                  class="module-description">Mengenal platform Roblox dan dasar pengalaman
+                  bermain.</span><span class="module-progress-line"><span style="width: 0%"></span></span><span
+                  class="module-progress-label">0 dari 3 materi selesai</span></span><span
+                class="module-status not-started">Belum dimulai</span><span class="module-chevron"><i
+                  data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="module-lessons" id="module-lessons-1" hidden>
+              <a class="lesson-row" href="#" data-lesson><span class="lesson-index">01</span><span
+                  class="lesson-copy"><strong>Apa itu Roblox?</strong><small>Pengenalan platform dan
+                    komunitas</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 5
+                  menit</span><span class="lesson-open"><i data-lucide="play-circle"></i></span></a><a
+                class="lesson-row" href="#" data-lesson><span class="lesson-index">02</span><span
+                  class="lesson-copy"><strong>Mengenal Roblox Studio</strong><small>Fungsi utama dan area
+                    kerja</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 8 menit</span><span
+                  class="lesson-open"><i data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#"
+                data-lesson><span class="lesson-index">03</span><span class="lesson-copy"><strong>Menyiapkan akun dan
+                    proyek</strong><small>Persiapan sebelum mulai membuat game</small></span><span
+                  class="lesson-duration"><i data-lucide="clock-3"></i> 6 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a>
+            </div>
+          </article>
+          <article class="module-card" data-module="2">
+            <button class="module-card-toggle" type="button" aria-expanded="false" aria-controls="module-lessons-2">
+              <span class="module-number">02</span><span class="module-card-main"><span
+                  class="module-card-kicker">ENVIRONMENT</span><strong>Dasar Roblox Studio</strong><span
+                  class="module-description">Kenali tools, viewport, dan pengaturan workspace.</span><span
+                  class="module-progress-line"><span style="width: 0%"></span></span><span
+                  class="module-progress-label">0 dari 3 materi selesai</span></span><span
+                class="module-status not-started">Belum dimulai</span><span class="module-chevron"><i
+                  data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="module-lessons" id="module-lessons-2" hidden>
+              <a class="lesson-row" href="#" data-lesson><span class="lesson-index">01</span><span
+                  class="lesson-copy"><strong>Workspace dan Explorer</strong><small>Memahami panel kerja
+                    utama</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 7 menit</span><span
+                  class="lesson-open"><i data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#"
+                data-lesson><span class="lesson-index">02</span><span class="lesson-copy"><strong>Move, Scale, dan
+                    Rotate</strong><small>Mengatur objek di dalam dunia</small></span><span class="lesson-duration"><i
+                    data-lucide="clock-3"></i> 9 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#" data-lesson><span
+                  class="lesson-index">03</span><span class="lesson-copy"><strong>Menyimpan dan menjalankan
+                    proyek</strong><small>Uji coba hasil kerja pertama</small></span><span class="lesson-duration"><i
+                    data-lucide="clock-3"></i> 5 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a>
+            </div>
+          </article>
+          <article class="module-card" data-module="3">
+            <button class="module-card-toggle" type="button" aria-expanded="false" aria-controls="module-lessons-3">
+              <span class="module-number">03</span><span class="module-card-main"><span
+                  class="module-card-kicker">BUILDING</span><strong>Membangun Dunia Pertama</strong><span
+                  class="module-description">Susun part dan bentuk lingkungan game sederhana.</span><span
+                  class="module-progress-line"><span style="width: 0%"></span></span><span
+                  class="module-progress-label">0 dari 3 materi selesai</span></span><span
+                class="module-status not-started">Belum dimulai</span><span class="module-chevron"><i
+                  data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="module-lessons" id="module-lessons-3" hidden>
+              <a class="lesson-row" href="#" data-lesson><span class="lesson-index">01</span><span
+                  class="lesson-copy"><strong>Membuat dan mengatur Part</strong><small>Dasar membangun
+                    objek</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 8 menit</span><span
+                  class="lesson-open"><i data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#"
+                data-lesson><span class="lesson-index">02</span><span class="lesson-copy"><strong>Material dan
+                    warna</strong><small>Mengatur tampilan lingkungan</small></span><span class="lesson-duration"><i
+                    data-lucide="clock-3"></i> 6 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#" data-lesson><span
+                  class="lesson-index">03</span><span class="lesson-copy"><strong>Membuat rintangan
+                    sederhana</strong><small>Menggabungkan objek menjadi level</small></span><span
+                  class="lesson-duration"><i data-lucide="clock-3"></i> 10 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a>
+            </div>
+          </article>
+          <article class="module-card" data-module="4">
+            <button class="module-card-toggle" type="button" aria-expanded="false" aria-controls="module-lessons-4">
+              <span class="module-number">04</span><span class="module-card-main"><span
+                  class="module-card-kicker">SCRIPTING</span><strong>Dasar Scripting Lua</strong><span
+                  class="module-description">Mulai memahami variabel, event, dan logika sederhana.</span><span
+                  class="module-progress-line"><span style="width: 0%"></span></span><span
+                  class="module-progress-label">0 dari 3 materi selesai</span></span><span
+                class="module-status not-started">Belum dimulai</span><span class="module-chevron"><i
+                  data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="module-lessons" id="module-lessons-4" hidden>
+              <a class="lesson-row" href="#" data-lesson><span class="lesson-index">01</span><span
+                  class="lesson-copy"><strong>Mengenal script Lua</strong><small>Struktur script
+                    pertama</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 8
+                  menit</span><span class="lesson-open"><i data-lucide="play-circle"></i></span></a><a
+                class="lesson-row" href="#" data-lesson><span class="lesson-index">02</span><span
+                  class="lesson-copy"><strong>Variabel dan nilai</strong><small>Menyimpan informasi dalam
+                    script</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 7 menit</span><span
+                  class="lesson-open"><i data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#"
+                data-lesson><span class="lesson-index">03</span><span class="lesson-copy"><strong>Event dan
+                    interaksi</strong><small>Membuat objek merespons pemain</small></span><span
+                  class="lesson-duration"><i data-lucide="clock-3"></i> 10 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a>
+            </div>
+          </article>
+          <article class="module-card" data-module="5">
+            <button class="module-card-toggle" type="button" aria-expanded="false" aria-controls="module-lessons-5">
+              <span class="module-number">05</span><span class="module-card-main"><span
+                  class="module-card-kicker">GAMEPLAY</span><strong>Membuat Gameplay</strong><span
+                  class="module-description">Tambahkan tujuan, tantangan, dan mekanik permainan.</span><span
+                  class="module-progress-line"><span style="width: 0%"></span></span><span
+                  class="module-progress-label">0 dari 3 materi selesai</span></span><span
+                class="module-status not-started">Belum dimulai</span><span class="module-chevron"><i
+                  data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="module-lessons" id="module-lessons-5" hidden>
+              <a class="lesson-row" href="#" data-lesson><span class="lesson-index">01</span><span
+                  class="lesson-copy"><strong>Menentukan tujuan game</strong><small>Menyusun alur
+                    permainan</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 6
+                  menit</span><span class="lesson-open"><i data-lucide="play-circle"></i></span></a><a
+                class="lesson-row" href="#" data-lesson><span class="lesson-index">02</span><span
+                  class="lesson-copy"><strong>Checkpoint dan respawn</strong><small>Memberi progres pada
+                    pemain</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 9 menit</span><span
+                  class="lesson-open"><i data-lucide="play-circle"></i></span></a><a class="lesson-row" href="#"
+                data-lesson><span class="lesson-index">03</span><span class="lesson-copy"><strong>Menguji
+                    gameplay</strong><small>Memeriksa tantangan dan keseimbangan</small></span><span
+                  class="lesson-duration"><i data-lucide="clock-3"></i> 7 menit</span><span class="lesson-open"><i
+                    data-lucide="play-circle"></i></span></a>
+            </div>
+          </article>
+          <article class="module-card" data-module="6">
+            <button class="module-card-toggle" type="button" aria-expanded="false" aria-controls="module-lessons-6">
+              <span class="module-number">06</span><span class="module-card-main"><span
+                  class="module-card-kicker">PUBLISHING</span><strong>Uji Coba dan Publikasi</strong><span
+                  class="module-description">Periksa hasil akhir dan siapkan game untuk dibagikan.</span><span
+                  class="module-progress-line"><span style="width: 0%"></span></span><span
+                  class="module-progress-label">0 dari 3 materi selesai</span></span><span
+                class="module-status not-started">Belum dimulai</span><span class="module-chevron"><i
+                  data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="module-lessons" id="module-lessons-6" hidden>
+              <a class="lesson-row" href="#" data-lesson><span class="lesson-index">01</span><span
+                  class="lesson-copy"><strong>Playtest dan debugging</strong><small>Menemukan dan memperbaiki
+                    masalah</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 8
+                  menit</span><span class="lesson-open"><i data-lucide="play-circle"></i></span></a><a
+                class="lesson-row" href="#" data-lesson><span class="lesson-index">02</span><span
+                  class="lesson-copy"><strong>Pengaturan publikasi</strong><small>Menyiapkan pengalaman untuk
+                    dibagikan</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 6
+                  menit</span><span class="lesson-open"><i data-lucide="play-circle"></i></span></a><a
+                class="lesson-row" href="#" data-lesson><span class="lesson-index">03</span><span
+                  class="lesson-copy"><strong>Checklist proyek akhir</strong><small>Memeriksa kualitas sebelum
+                    rilis</small></span><span class="lesson-duration"><i data-lucide="clock-3"></i> 5 menit</span><span
+                  class="lesson-open"><i data-lucide="play-circle"></i></span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Simple lesson video popup -->
+  <div class="lesson-video-modal" id="lesson-video-modal" hidden>
+    <button class="lesson-video-backdrop" type="button" data-close-lesson aria-label="Tutup video"></button>
+    <section class="lesson-video-dialog" role="dialog" aria-modal="true" aria-labelledby="lesson-video-title">
+      <header class="lesson-video-header">
+        <h2 id="lesson-video-title">Judul Pelajaran</h2>
+        <button class="lesson-video-close" type="button" data-close-lesson aria-label="Tutup popup">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="lesson-video-frame" id="lesson-video-frame">
+        <div class="lesson-video-placeholder" id="lesson-video-placeholder">
+          <i data-lucide="play-circle" aria-hidden="true"></i>
+          <span>Video untuk pelajaran ini belum ditautkan.</span>
+        </div>
+        <iframe id="lesson-video-iframe" title="Video pembelajaran"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen hidden></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+  <script src="js/module.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="js/guest-gate.js"></script>
+</body>
+
+</html>

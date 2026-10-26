@@ -1,0 +1,819 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --page: #0a0e1d;
+  --sidebar: #111827;
+  --panel: #1c2537;
+  --auth-shell: #121b31;
+  --auth-card: #1b2745;
+  --field: #101a30;
+  --blue: #3474d8;
+  --text: #f8f8fc;
+  --muted: #aebbd3;
+  --disabled: #737b8b;
+  --red: #ff2626;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--page);
+  color: var(--text);
+}
+
+body {
+  font-family: "Roboto Slab", Georgia, serif;
+  overflow-x: hidden;
+}
+
+body {
+  animation: page-enter 140ms ease-out both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0.82;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.roblox-mark {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #fff, #9eabba);
+  transform: rotate(14deg);
+  clip-path: polygon(18% 0, 100% 18%, 82% 100%, 0 82%);
+}
+
+.roblox-mark span {
+  width: 25%;
+  height: 25%;
+  background: var(--sidebar);
+}
+
+.shield {
+  border: 2px solid currentColor;
+  clip-path: polygon(50% 0, 100% 18%, 100% 76%, 50% 100%, 0 76%, 0 18%);
+}
+
+.wave {
+  font-family: sans-serif;
+}
+
+.field-icon {
+  flex: 0 0 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+.toggle-password {
+  border: 0;
+  padding: 4px;
+  width: 34px;
+  height: 38px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toggle-password img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.text-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  display: none;
+  margin: -5px 16px 0;
+  color: var(--red);
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+.terms-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: -1px 6px 0;
+  font-size: 19px;
+}
+
+.terms-row input {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  border-radius: 4px;
+  background: var(--field);
+  cursor: pointer;
+}
+
+.terms-row input:checked {
+  background: var(--blue);
+  box-shadow: inset 0 0 0 5px var(--field);
+}
+
+.terms-row a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.terms-row a:hover {
+  text-decoration: underline;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 20;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #2d426e;
+  font:
+    14px Inter,
+    sans-serif;
+  transform: translate(-50%, 12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (min-width: 761px) and (max-height: 950px) {
+  .roblox-mark {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+}
+
+@media (max-width: 760px) {
+  .field-icon {
+    font-size: 23px;
+    flex-basis: 22px;
+  }
+
+  .toggle-password {
+    font-size: 23px;
+  }
+
+  .error-message {
+    font-size: 14px;
+  }
+
+  .terms-row {
+    font-size: 13px;
+  }
+
+  .terms-row input {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.field-icon {
+  font-size: 24px;
+  flex-basis: 24px;
+}
+
+.toggle-password {
+  font-size: 24px;
+}
+
+.terms-row {
+  font-size: 15px;
+}
+
+.terms-row input {
+  width: 20px;
+  height: 20px;
+}
+
+.error-message {
+  font-size: 16px;
+}
+
+.placeholder-view {
+  min-height: 100vh;
+  padding: 28px;
+  display: grid;
+  place-items: center;
+  background: var(--page);
+}
+
+.placeholder-card {
+  width: min(900px, 100%);
+  min-height: 520px;
+  padding: 30px 38px;
+  border-radius: 30px;
+  background: var(--auth-shell);
+  display: flex;
+  flex-direction: column;
+}
+
+.placeholder-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text);
+  text-decoration: none;
+  font:
+    900 21px/1.45 "Roboto Slab",
+    Georgia,
+    serif;
+}
+
+.placeholder-brand .roblox-mark span {
+  background: var(--auth-shell);
+}
+
+.placeholder-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 36px 0;
+}
+
+.placeholder-content .eyebrow {
+  margin: 0 0 12px;
+  color: #91a9d8;
+  font:
+    700 12px Inter,
+    Arial,
+    sans-serif;
+  letter-spacing: 2px;
+}
+
+.placeholder-content h1 {
+  margin: 0 0 16px;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 900;
+}
+
+.placeholder-content p:not(.eyebrow) {
+  margin: 0 0 28px;
+  color: #c4cde0;
+  font:
+    17px/1.6 Inter,
+    Arial,
+    sans-serif;
+}
+
+@media (max-width: 600px) {
+  .placeholder-view {
+    padding: 14px;
+  }
+
+  .placeholder-card {
+    min-height: 460px;
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .placeholder-brand {
+    font-size: 16px;
+  }
+
+  .placeholder-brand .roblox-mark {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+}
+
+@media (max-width: 760px) {
+  .field-icon img {
+    width: 21px;
+    height: 21px;
+  }
+
+  .toggle-password img {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.sidebar .profile.profile-link {
+  appearance: none;
+  -webkit-appearance: none;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 38px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline-offset: 5px;
+  background: transparent !important;
+  box-shadow: none;
+  color: var(--text);
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar .profile.profile-link:focus-visible {
+  outline: 2px solid #06b6d4;
+}
+
+.sidebar .profile.profile-link .avatar {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  flex: 0 0 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #d8d8d8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #222;
+}
+
+.sidebar .profile.profile-link .profile-name {
+  max-width: 100%;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .sidebar .profile.profile-link {
+    margin-top: 22px;
+    gap: 8px;
+  }
+
+  .sidebar .profile.profile-link .avatar {
+    width: 84px;
+    height: 84px;
+    flex-basis: 84px;
+    font-size: 30px;
+  }
+
+  .sidebar .profile.profile-link .profile-name {
+    font-size: 14px;
+  }
+}
+
+.sidebar .profile.profile-link .avatar {
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  aspect-ratio: 1 / 1;
+  flex: 0 0 120px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  box-sizing: border-box;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media (max-width: 760px) {
+  .sidebar .profile.profile-link .avatar {
+    width: 84px !important;
+    height: 84px !important;
+    min-width: 84px !important;
+    min-height: 84px !important;
+    max-width: 84px !important;
+    max-height: 84px !important;
+    flex-basis: 84px !important;
+  }
+}
+
+.sidebar .profile.profile-link .profile-name {
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+  text-transform: none !important;
+}
+
+.sidebar .profile.profile-link .avatar {
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  flex: 0 0 120px !important;
+}
+
+@media (max-width: 760px) {
+  .sidebar .profile.profile-link .profile-name {
+    font-size: 14px !important;
+  }
+
+  .sidebar .profile.profile-link .avatar {
+    width: 84px !important;
+    height: 84px !important;
+    min-width: 84px !important;
+    min-height: 84px !important;
+    max-width: 84px !important;
+    max-height: 84px !important;
+    flex: 0 0 84px !important;
+  }
+}
+
+@media (min-width: 761px) {
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .app-shell {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+    align-items: stretch;
+  }
+
+  .sidebar {
+    height: 100vh;
+    min-height: 0;
+    flex-shrink: 0;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .main-content {
+    height: 100vh;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .sidebar .profile.profile-link .profile-name {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    font-weight: 900;
+    text-transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .app-shell {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    min-height: 0;
+  }
+
+  .main-content {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.sidebar .profile.profile-link .profile-name {
+  text-transform: none !important;
+  margin-top: 0;
+}
+
+.sidebar .profile.profile-link .profile-handle {
+  color: #aab5c8;
+  font: 500 12px/1.35 Inter, sans-serif;
+  margin-top: -5px;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+:root {
+  --page: #0b1120;
+  --sidebar: #0d1729;
+  --panel: #142238;
+  --auth-shell: #121e33;
+  --auth-card: #17263f;
+  --field: #101d32;
+  --blue: #287bff;
+  --text: #f4f7ff;
+  --muted: #a8bad5;
+  --disabled: #7385a2;
+  --red: #ff5d72;
+  --line: rgba(105, 153, 224, .16);
+  --card-top: #12233a;
+  --card-bottom: #0e1c30;
+  --accent: #48a0ff;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: Inter, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.brand,
+.brand-name,
+.nav-item,
+.login-button,
+.page-header h1,
+.welcome-card h2,
+.panel h2,
+.section-placeholder h2,
+.profile-main h1,
+.profile-main h2 {
+  font-family: "Roboto Slab", Georgia, serif;
+}
+
+.app-shell {
+  background: var(--page);
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #0d192c 0%, #0a1425 100%) !important;
+  border-right: 1px solid rgba(75, 139, 231, .20);
+}
+
+.brand-name {
+  letter-spacing: -.35px;
+}
+
+.navigation {
+  gap: 12px;
+}
+
+.nav-item {
+  border-radius: 13px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.nav-item:hover {
+  color: #fff !important;
+}
+
+.nav-item.active,
+.nav-item[aria-current="page"] {
+  background: linear-gradient(100deg, #124eaa, #123b78) !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 1px rgba(86, 157, 255, .2);
+}
+
+.welcome-card,
+.announcement,
+.panel,
+.leaderboard-panel,
+.trending-panel,
+.section-placeholder,
+.placeholder-card,
+.module-card,
+.challenge-card,
+.forum-card,
+.leaderboard-card,
+.content-card {
+  background: linear-gradient(145deg, var(--card-top) 0%, var(--card-bottom) 100%) !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .10);
+}
+
+.welcome-card {
+  border-radius: 22px !important;
+}
+
+.announcement {
+  border-radius: 22px !important;
+}
+
+.panel,
+.leaderboard-panel,
+.trending-panel {
+  border-radius: 24px !important;
+}
+
+.announcement h2,
+.panel h2 {
+  color: #f5f8ff;
+}
+
+.blur-preview,
+.forum-preview div,
+.leaderboard-panel .blur-preview,
+.trending-panel .forum-preview div {
+  background: rgba(42, 68, 105, .55) !important;
+  border: 1px solid rgba(112, 158, 224, .12);
+  border-radius: 15px;
+}
+
+.page-header h1 {
+  letter-spacing: -.7px;
+}
+
+.welcome-card h2,
+.panel h2,
+.section-placeholder h2 {
+  letter-spacing: -.35px;
+}
+
+.main-content p,
+.section-placeholder p {
+  color: #b7c6dd;
+}
+
+.section-placeholder .section-icon {
+  background: linear-gradient(145deg, #1456b8, #173663) !important;
+  border: 1px solid rgba(91, 161, 255, .24);
+  box-shadow: 0 8px 24px rgba(20, 91, 190, .18);
+}
+
+.placeholder-back,
+.login-button {
+  background: linear-gradient(105deg, #1263d8, #174a98) !important;
+  border: 1px solid rgba(113, 174, 255, .2);
+  transition: filter .18s ease, transform .18s ease;
+}
+
+.placeholder-back:hover,
+.login-button:hover {
+  filter: brightness(1.12);
+}
+
+input,
+textarea,
+select {
+  color: var(--text);
+  background-color: var(--field);
+  border-color: rgba(105, 153, 224, .24);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(56, 139, 255, .28);
+  border-color: #3989ff;
+}
+
+.toast {
+  background: #173c70;
+  border: 1px solid rgba(112, 174, 255, .22);
+}
+
+@media (max-width: 760px) {
+
+  .welcome-card,
+  .announcement {
+    border-radius: 18px !important;
+  }
+
+  .panel,
+  .leaderboard-panel,
+  .trending-panel {
+    border-radius: 19px !important;
+  }
+}
+
+.nav-icon [data-lucide],
+.nav-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.9;
+  flex: 0 0 24px;
+}
+
+.nav-icon img {
+  display: none;
+}
+
+.toggle-password [data-lucide],
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.input-icon [data-lucide],
+.input-icon svg,
+.field-icon [data-lucide],
+.field-icon svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.9;
+  flex: 0 0 auto;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #3474d8 #0a1425;
+  scrollbar-gutter: stable;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #0a1425;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #3474d8;
+  border: 2px solid #0a1425;
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #5595ff;
+}

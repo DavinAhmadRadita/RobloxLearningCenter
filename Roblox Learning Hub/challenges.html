@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenges | Roblox Learning Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/guest-gate.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/challenges.css" />
+</head>
+
+<body data-page="Challenges">
+    <div id="dashboard-view" class="app-shell dashboard-shell">
+        <aside class="sidebar">
+            <div class="brand dashboard-brand" aria-label="Roblox Learning Center">
+                <span class="roblox-mark"><span></span></span><span class="brand-name">ROBLOX LEARNING<br />
+                    CENTER</span>
+            </div>
+            <button class="profile profile-link" id="profile" type="button" aria-label="Open profile">
+                <div class="avatar" id="avatar">U</div>
+                <div class="profile-name" id="profile-name">USERNAME</div>
+                <div class="profile-handle" id="profile-handle">@username</div>
+            </button>
+            <nav class="navigation" aria-label="Dashboard navigation">
+                <button class="nav-item" type="button" data-page="Dashboard">
+                    <span class="nav-icon"><i data-lucide="house"></i></span><span>DASHBOARD</span>
+                </button>
+                <button class="nav-item" type="button" data-page="Modul">
+                    <span class="nav-icon"><i data-lucide="book-open"></i></span><span>MODUL</span>
+                </button>
+                <button class="nav-item" type="button" data-page="Leaderboard">
+                    <span class="nav-icon"><i data-lucide="trophy"></i></span><span>LEADERBOARD</span>
+                </button>
+                <button class="nav-item" type="button" data-page="Forum">
+                    <span class="nav-icon"><i data-lucide="messages-square"></i></span><span>FORUM</span>
+                </button>
+                <button class="nav-item" type="button" data-page="Challenges">
+                    <span class="nav-icon"><i data-lucide="flag"></i></span><span>CHALLENGES</span>
+                </button>
+            </nav>
+            <button class="login-button" id="dashboard-auth-button" type="button">
+                MASUK/DAFTAR
+            </button>
+        </aside>
+        <main class="main-content challenge-main">
+            <section id="challenge-list-view">
+                <header class="challenge-hero">
+                    <div>
+                        <span class="eyebrow">LEVEL UP YOUR SKILLS</span>
+                        <h1>Challenges</h1>
+                        <p>
+                            Selesaikan tantangan coding Roblox dan dapatkan XP serta badge.
+                        </p>
+                    </div>
+                    <div class="hero-art">
+                        <i data-lucide="code-2"></i><i data-lucide="gamepad-2"></i>
+                    </div>
+                </header>
+                <div class="challenge-stats">
+                    <article>
+                        <span class="stat-icon blue"><i data-lucide="flag"></i></span>
+                        <div>
+                            <strong id="total-count">6</strong><small>Total Challenge</small>
+                        </div>
+                    </article>
+                    <article>
+                        <span class="stat-icon gold"><i data-lucide="trophy"></i></span>
+                        <div>
+                            <strong id="done-count">0</strong><small>Selesai</small>
+                        </div>
+                    </article>
+                    <article>
+                        <span class="stat-icon purple"><i data-lucide="loader-circle"></i></span>
+                        <div>
+                            <strong id="working-count">0</strong><small>Sedang Dikerjakan</small>
+                        </div>
+                    </article>
+                    <article>
+                        <span class="stat-icon cyan"><i data-lucide="file-code-2"></i></span>
+                        <div>
+                            <strong id="todo-count">6</strong><small>Belum Dimulai</small>
+                        </div>
+                    </article>
+                </div>
+                <div class="challenge-toolbar">
+                    <div class="filter-row" id="filter-row">
+                        <button class="filter active" data-filter="Semua">Semua</button><button class="filter"
+                            data-filter="Pemula">Pemula</button><button class="filter"
+                            data-filter="Menengah">Menengah</button><button class="filter"
+                            data-filter="NPC">NPC</button><button class="filter" data-filter="Trap">Trap</button>
+                    </div>
+                    <label class="challenge-search"><i data-lucide="search"></i><input id="challenge-search"
+                            placeholder="Cari challenge..." /></label>
+                </div>
+                <div class="challenge-grid" id="challenge-grid"></div>
+            </section>
+            <section id="challenge-detail-view" class="subview hidden"></section>
+            <section id="challenge-work-view" class="subview hidden"></section>
+            <section id="challenge-result-view" class="subview hidden"></section>
+        </main>
+    </div>
+    <div class="toast" id="challenge-toast" role="status"></div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/challenges.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        if (window.lucide) lucide.createIcons();
+    </script>
+  <script src="js/guest-gate.js"></script>
+</body>
+
+</html>

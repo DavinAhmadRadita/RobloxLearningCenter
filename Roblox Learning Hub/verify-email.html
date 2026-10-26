@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Email</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/verify-email.css" />
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+  <main class="verify-card">
+    <div class="mail-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+        <path d="m4 7 8 6 8-6"></path>
+      </svg>
+    </div>
+    <h1>Verify Your Email</h1>
+    <p class="subtitle">
+      We've sent a 6-digit verification code to your email address.
+    </p>
+    <div class="email-panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+        <path d="m4 7 8 6 8-6"></path>
+      </svg>
+      <strong id="masked-email">your email</strong>
+      <span>Please check your inbox or spam folder.</span>
+    </div>
+    <form id="otp-form">
+      <label class="code-label" for="otp-1">Enter verification code</label>
+      <div class="otp-inputs" role="group" aria-label="6-digit verification code">
+        <input id="otp-1" class="otp-digit" inputmode="numeric" autocomplete="one-time-code" maxlength="1"
+          aria-label="Digit 1" />
+        <input class="otp-digit" inputmode="numeric" maxlength="1" aria-label="Digit 2" />
+        <input class="otp-digit" inputmode="numeric" maxlength="1" aria-label="Digit 3" />
+        <input class="otp-digit" inputmode="numeric" maxlength="1" aria-label="Digit 4" />
+        <input class="otp-digit" inputmode="numeric" maxlength="1" aria-label="Digit 5" />
+        <input class="otp-digit" inputmode="numeric" maxlength="1" aria-label="Digit 6" />
+      </div>
+      <p class="feedback" id="otp-feedback" aria-live="polite"></p>
+      <button class="verify-button" type="submit">Verify Email</button>
+    </form>
+    <p class="resend-text">
+      Didn't receive the code?
+      <button type="button" id="resend-button">Resend code</button>
+    </p>
+    <p class="demo-note">Frontend demo: use code <b>134145</b>.</p>
+  </main>
+  <script src="js/verify-email.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>

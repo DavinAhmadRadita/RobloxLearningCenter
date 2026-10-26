@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum | Roblox Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/guest-gate.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/forum.css">
+</head>
+
+<body data-page="Forum">
+  <div id="dashboard-view" class="app-shell dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand dashboard-brand" aria-label="Roblox Learning Center"><span
+          class="roblox-mark"><span></span></span><span class="brand-name">ROBLOX LEARNING<br> CENTER</span></div>
+      <button class="profile profile-link" id="profile" type="button" aria-label="Open profile">
+        <div class="avatar" id="avatar">U</div>
+        <div class="profile-name" id="profile-name">USERNAME</div>
+        <div class="profile-handle" id="profile-handle">@username</div>
+      </button>
+      <nav class="navigation" aria-label="Dashboard navigation">
+        <button class="nav-item" type="button" data-page="Dashboard"><span class="nav-icon"><i
+              data-lucide="house"></i></span><span>DASHBOARD</span></button>
+        <button class="nav-item" type="button" data-page="Modul"><span class="nav-icon"><i
+              data-lucide="book-open"></i></span><span>MODUL</span></button>
+        <button class="nav-item" type="button" data-page="Leaderboard"><span class="nav-icon"><i
+              data-lucide="trophy"></i></span><span>LEADERBOARD</span></button>
+        <button class="nav-item active" type="button" data-page="Forum"><span class="nav-icon"><i
+              data-lucide="messages-square"></i></span><span>FORUM</span></button>
+        <button class="nav-item" type="button" data-page="Challenges"><span class="nav-icon"><i
+              data-lucide="flag"></i></span><span>CHALLENGES</span></button>
+      </nav>
+      <button class="login-button" id="dashboard-auth-button" type="button">MASUK/DAFTAR</button>
+    </aside>
+    <main class="main-content forum-main">
+      <header class="forum-header">
+        <div>
+          <h1>Forum</h1>
+          <p>Diskusi, berbagi ilmu, dan tunjukkan hasil karyamu bersama komunitas Roblox Learning Center.</p>
+        </div><button class="create-topic-btn" id="open-create"><i data-lucide="plus"></i><span>Buat
+            Topik</span></button>
+      </header>
+      <div class="forum-categories" id="category-tabs">
+        <button class="category-tab active" data-category="Semua Topik"><i data-lucide="layout-grid"></i>Semua
+          Topik</button>
+        <button class="category-tab" data-category="Diskusi"><i data-lucide="message-circle"></i>Diskusi</button>
+        <button class="category-tab" data-category="Tips & Tutorial"><i data-lucide="lightbulb"></i>Tips &amp;
+          Tutorial</button>
+        <button class="category-tab" data-category="Showcase"><i data-lucide="image"></i>Showcase</button>
+        <button class="category-tab" data-category="Pertanyaan / Bantuan & Error"><i
+            data-lucide="circle-help"></i>Pertanyaan / Bantuan &amp; Error</button>
+      </div>
+      <div class="forum-workspace" id="forum-workspace">
+        <section class="topic-list-panel">
+          <div class="topic-tools"><label class="topic-search"><i data-lucide="search"></i><input id="topic-search"
+                type="search" placeholder="Cari topik, pengguna, atau kata kunci..."></label><label
+              class="sort-select"><i data-lucide="arrow-up-down"></i><select id="topic-sort" aria-label="Urutkan topik">
+                <option value="new">Terbaru</option>
+                <option value="popular">Paling populer</option>
+                <option value="comments">Komentar terbanyak</option>
+              </select></label></div>
+          <div class="topic-list" id="topic-list" aria-live="polite"></div>
+          <div class="empty-results hidden" id="empty-results"><i data-lucide="search-x"></i><strong>Topik tidak
+              ditemukan</strong><span>Coba kata kunci atau kategori lain.</span></div>
+        </section>
+        <section class="thread-panel hidden" id="thread-panel" aria-label="Detail topik"></section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="create-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <form class="create-modal" id="create-form">
+      <div class="modal-heading">
+        <div class="modal-icon"><i data-lucide="pencil-line"></i></div>
+        <div class="modal-heading-copy">
+          <h2 id="modal-title">Buat Topik Baru</h2>
+          <p>Bagikan pertanyaan, ide, atau hasil karyamu dengan komunitas.</p>
+        </div><button type="button" class="icon-button close-modal" id="close-create" aria-label="Tutup"><i
+            data-lucide="x"></i></button>
+      </div>
+      <div class="form-label">Kategori <span>*</span></div>
+      <div class="category-choices" id="category-choices">
+        <button type="button" class="choice-card selected" data-choice="Diskusi"><span class="choice-icon discussion"><i
+              data-lucide="message-circle"></i></span><strong>Diskusi</strong><small>Berbagi pendapat dan diskusi
+            umum</small><i class="choice-check" data-lucide="check-circle-2"></i></button>
+        <button type="button" class="choice-card" data-choice="Tips & Tutorial"><span class="choice-icon tips"><i
+              data-lucide="lightbulb"></i></span><strong>Tips &amp; Tutorial</strong><small>Berbagi panduan dan
+            trik</small><i class="choice-check" data-lucide="check-circle-2"></i></button>
+        <button type="button" class="choice-card" data-choice="Showcase"><span class="choice-icon showcase"><i
+              data-lucide="image"></i></span><strong>Showcase</strong><small>Tunjukkan hasil game buatanmu</small><i
+            class="choice-check" data-lucide="check-circle-2"></i></button>
+        <button type="button" class="choice-card" data-choice="Pertanyaan / Bantuan & Error"><span
+            class="choice-icon help"><i data-lucide="circle-help"></i></span><strong>Pertanyaan / Bantuan &amp;
+            Error</strong><small>Minta bantuan untuk error atau masalah</small><i class="choice-check"
+            data-lucide="check-circle-2"></i></button>
+      </div>
+      <input type="hidden" id="selected-category" value="Diskusi">
+      <label class="form-label" for="new-title">Judul Topik <span>*</span></label><input class="form-input"
+        id="new-title" maxlength="100" placeholder="Tulis judul topik di sini..." required>
+      <div class="counter" id="title-counter">0/100</div>
+      <label class="form-label" for="new-body">Isi Topik <span>*</span></label><textarea class="form-input body-input"
+        id="new-body" maxlength="2000" placeholder="Jelaskan topikmu di sini..." required></textarea>
+      <div class="counter" id="body-counter">0/2000</div>
+      <label class="form-label" for="new-image">Lampiran Gambar <small>(opsional)</small></label><label
+        class="upload-box" for="new-image"><i data-lucide="image-plus"></i><span><strong id="upload-title">Klik untuk
+            memilih gambar</strong><small>PNG, JPG, atau GIF · maksimal 5 MB</small></span><input type="file"
+          id="new-image" accept="image/png,image/jpeg,image/gif"></label>
+      <div class="image-preview hidden" id="image-preview"><img id="preview-img" alt="Pratinjau lampiran"><span
+          id="preview-name"></span><button type="button" id="remove-image" class="text-action">Hapus</button></div>
+      <div class="modal-actions"><button type="button" class="secondary-btn" id="cancel-create">Batal</button><button
+          type="submit" class="submit-topic"><i data-lucide="send"></i>Buat Topik</button></div>
+    </form>
+  </div>
+  <div class="forum-toast" id="forum-toast" role="status"></div>
+  <script src="js/dashboard.js"></script>
+  <script src="js/forum.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script src="js/guest-gate.js"></script>
+</body>
+
+</html>
