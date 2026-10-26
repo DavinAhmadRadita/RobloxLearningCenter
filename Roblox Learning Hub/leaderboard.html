@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard | Roblox Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+
+<body data-page="Leaderboard">
+  <div id="dashboard-view" class="app-shell dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand dashboard-brand" aria-label="Roblox Learning Center">
+        <span class="roblox-mark"><span></span></span>
+        <span class="brand-name">ROBLOX LEARNING<br />CENTER</span>
+      </div>
+      <button class="profile profile-link" id="profile" type="button" aria-label="Open profile">
+        <div class="avatar" id="avatar">U</div>
+        <div class="profile-name" id="profile-name">USERNAME</div>
+        <div class="profile-handle" id="profile-handle">@username</div>
+      </button>
+      <nav class="navigation" aria-label="Dashboard navigation">
+        <button class="nav-item" type="button" data-page="Dashboard">
+          <span class="nav-icon"><i data-lucide="house" aria-hidden="true"></i></span><span>DASHBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Modul">
+          <span class="nav-icon"><i data-lucide="book-open" aria-hidden="true"></i></span><span>MODUL</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Leaderboard">
+          <span class="nav-icon"><i data-lucide="trophy" aria-hidden="true"></i></span><span>LEADERBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Forum">
+          <span class="nav-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>FORUM</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Challenges">
+          <span class="nav-icon"><i data-lucide="flag" aria-hidden="true"></i></span><span>CHALLENGES</span>
+        </button>
+      </nav>
+      <button class="login-button" id="dashboard-auth-button" type="button">
+        MASUK/DAFTAR
+      </button>
+    </aside>
+    <main class="main-content">
+      <section class="leaderboard-page" aria-labelledby="leaderboard-page-title">
+        <header class="leaderboard-heading">
+          <h1 id="leaderboard-page-title">Leaderboard</h1>
+          <p>Lihat peringkat pelajar Roblox Learning Center dan raih posisi tertinggi!</p>
+        </header>
+        <div id="leaderboard-podium" class="leaderboard-podium" aria-label="Tiga pemain teratas"></div>
+        <section class="leaderboard-ranking" aria-labelledby="ranking-title">
+          <div class="leaderboard-list-heading">
+            <h2 id="ranking-title">Peringkat 4–10</h2><span>Diurutkan berdasarkan total XP</span>
+          </div>
+          <div class="leaderboard-table-head"><span>Peringkat</span><span
+              class="table-player-heading">Peserta</span><span>Total XP</span></div>
+          <div id="leaderboard-page-list" class="leaderboard-page-list" aria-live="polite"></div>
+          <div id="leaderboard-current-user" class="leaderboard-current-user" aria-live="polite"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="js/dashboard.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>

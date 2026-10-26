@@ -1,0 +1,84 @@
+{
+  "badges": [
+    {
+      "id": "pemula",
+      "name": "Pemula",
+      "description": "Menyelesaikan video pembelajaran pertama.",
+      "rarity": "Umum",
+      "icon_url": "assets/badges/pemula.svg",
+      "owned": true
+    },
+    {
+      "id": "pembelajar-aktif",
+      "name": "Pembelajar Aktif",
+      "description": "Menyelesaikan 5 video pembelajaran.",
+      "rarity": "Umum",
+      "icon_url": "assets/badges/pembelajar-aktif.svg",
+      "owned": true
+    },
+    {
+      "id": "master-modul",
+      "name": "Master Modul",
+      "description": "Menyelesaikan seluruh video dalam modul.",
+      "rarity": "Langka",
+      "icon_url": "assets/badges/master-modul.svg",
+      "owned": true
+    },
+    {
+      "id": "penjelajah-materi",
+      "name": "Penjelajah Materi",
+      "description": "Menyelesaikan 10 video pembelajaran.",
+      "rarity": "Umum",
+      "icon_url": "assets/badges/penjelajah-materi.svg",
+      "owned": false
+    },
+    {
+      "id": "penakluk-challenge",
+      "name": "Penakluk Challenge",
+      "description": "Menyelesaikan 5 challenge.",
+      "rarity": "Langka",
+      "icon_url": "assets/badges/penakhluk-challenge.svg",
+      "owned": false
+    },
+    {
+      "id": "game-developer",
+      "name": "Game Developer",
+      "description": "Menyelesaikan challenge membuat game di Roblox Studio.",
+      "rarity": "Langka",
+      "icon_url": "assets/badges/game-developer.svg",
+      "owned": false
+    },
+    {
+      "id": "rajin-belajar",
+      "name": "Rajin Belajar",
+      "description": "Belajar 7 hari berturut-turut.",
+      "rarity": "Umum",
+      "icon_url": "assets/badges/rajin-belajar.svg",
+      "owned": true
+    },
+    {
+      "id": "kontributor",
+      "name": "Kontributor",
+      "description": "Membuat 5 postingan relevan di forum.",
+      "rarity": "Umum",
+      "icon_url": "assets/badges/kontributor.svg",
+      "owned": true
+    },
+    {
+      "id": "pembantu-komunitas",
+      "name": "Pembantu Komunitas",
+      "description": "Memberikan 10 jawaban yang membantu.",
+      "rarity": "Langka",
+      "icon_url": "assets/badges/comunity-helper.svg",
+      "owned": false
+    },
+    {
+      "id": "master-kreator",
+      "name": "Master Creator",
+      "description": "Menyelesaikan seluruh video wajib dan challenge.",
+      "rarity": "Legendaris",
+      "icon_url": "assets/badges/master-kreator.svg",
+      "owned": false
+    }
+  ]
+}

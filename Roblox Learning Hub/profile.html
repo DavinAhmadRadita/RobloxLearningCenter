@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Roblox Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+
+<body data-page="Profile">
+  <div id="dashboard-view" class="app-shell dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand dashboard-brand" aria-label="Roblox Learning Center">
+        <span class="roblox-mark"><span></span></span><span class="brand-name">ROBLOX LEARNING<br />CENTER</span>
+      </div>
+      <button class="profile profile-link" id="profile" type="button" aria-label="Open profile">
+        <div class="avatar" id="avatar">U</div>
+        <div class="profile-name" id="profile-name">USERNAME</div>
+        <div class="profile-handle" id="profile-handle">@username</div>
+      </button>
+      <nav class="navigation" aria-label="Dashboard navigation">
+        <button class="nav-item" type="button" data-page="Dashboard">
+          <span class="nav-icon"><i data-lucide="house" aria-hidden="true"></i></span><span>DASHBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Modul">
+          <span class="nav-icon"><i data-lucide="book-open" aria-hidden="true"></i></span><span>MODUL</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Leaderboard">
+          <span class="nav-icon"><i data-lucide="trophy" aria-hidden="true"></i></span><span>LEADERBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Forum">
+          <span class="nav-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>FORUM</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Challenges">
+          <span class="nav-icon"><i data-lucide="flag" aria-hidden="true"></i></span><span>CHALLENGES</span>
+        </button>
+      </nav>
+      <button class="login-button" id="dashboard-auth-button" type="button">
+        LOGOUT
+      </button>
+    </aside>
+    <main class="main-content profile-main">
+      <header class="page-header">
+        <h1>Profile</h1>
+      </header>
+      <section class="profile-hero">
+        <div class="profile-banner-art" aria-hidden="true">
+          <span class="banner-glow"></span><span
+            class="banner-slogan">LEARN<br />BUILD<br />CREATE<br />TOGETHER</span><span
+            class="banner-wordmark">ROBLOX</span>
+        </div>
+        <div class="hero-avatar-wrap">
+          <div class="hero-avatar" id="hero-avatar">U</div>
+        </div>
+        <div class="hero-info">
+          <h2 id="hero-username">USERNAME</h2>
+          <div class="hero-identity">
+            <span id="hero-handle">@username</span><span class="role-label">LEARNER</span>
+          </div>
+          <div class="level-line">LEVEL 1 - PEMULA</div>
+          <div class="xp-row">
+            <div class="progress-track"><span style="width: 0%"></span></div>
+            <span class="xp-total">0 / 100 XP</span>
+          </div>
+        </div>
+        <button type="button" class="edit-profile-hero-btn" data-setting="Edit Profile">
+          <i data-lucide="user-pen" aria-hidden="true"></i><span>Edit Profile</span>
+        </button>
+      </section>
+      <div class="profile-layout">
+        <section class="profile-card personal-card">
+          <div class="card-heading">
+            <h2>
+              <span class="heading-icon"><i data-lucide="circle-user-round" aria-hidden="true"></i></span>
+              Personal Information
+            </h2>
+          </div>
+          <div class="info-row">
+            <span>Display Name</span><span id="info-display-name">Username</span>
+          </div>
+          <div class="info-row">
+            <span>Username</span><span id="info-username">@username</span>
+          </div>
+          <div class="info-row">
+            <span>Email</span><span id="info-email">Belum diatur</span>
+          </div>
+          <div class="info-row">
+            <span>Role</span><span class="role-pill">LEARNER</span>
+          </div>
+          <div class="profile-account-actions">
+            <button type="button" class="profile-action-link" data-setting="Change Password">
+              <i data-lucide="rotate-ccw-key" aria-hidden="true"></i><span><strong>Change Password</strong><small>Ganti
+                  password akun untuk keamanan.</small></span><i data-lucide="chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </section>
+        <div class="profile-right-column">
+          <section class="profile-card badge-card">
+            <div class="card-heading">
+              <h2>
+                <span class="heading-icon"><i data-lucide="star" aria-hidden="true"></i></span>
+                My Badge
+              </h2>
+              <button class="plain-link" id="view-badges" type="button">
+                View All ›
+              </button>
+            </div>
+            <div class="badge-preview" id="badge-preview"></div>
+          </section>
+          <section class="profile-card learning-card">
+            <div class="card-heading">
+              <h2>
+                <span class="heading-icon"><i data-lucide="chart-column" aria-hidden="true"></i></span>
+                Learning Progress
+              </h2>
+            </div>
+            <div class="learning-progress-label">
+              <span>Overall Progress</span><span>0%</span>
+            </div>
+            <div class="learning-progress-row">
+              <div class="progress-track">
+                <span style="width: 0%"></span>
+              </div>
+            </div>
+            <div class="stats-row">
+              <div class="stat-tile">
+                <span class="stat-icon book-icon"><i data-lucide="book-open"
+                    aria-hidden="true"></i></span><span><strong>0 / 20</strong><small>Modul Selesai</small></span>
+              </div>
+              <div class="stat-tile">
+                <span class="stat-icon trophy-icon"><i data-lucide="trophy"
+                    aria-hidden="true"></i></span><span><strong>0 / 10</strong><small>Challenge Selesai</small></span>
+              </div>
+              <div class="stat-tile">
+                <span class="stat-icon xp-icon"><i data-lucide="star" aria-hidden="true"></i></span><span><strong>0
+                    XP</strong><small>Total XP</small></span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="edit-profile-modal" aria-hidden="true">
+    <section class="selection-modal edit-profile-modal" role="dialog" aria-modal="true"
+      aria-labelledby="edit-profile-title">
+      <div class="modal-heading">
+        <h2 id="edit-profile-title">EDIT PROFILE</h2>
+        <button class="close-modal" type="button" data-close="edit-profile-modal" aria-label="Close">
+          ×
+        </button>
+      </div>
+      <div class="edit-profile-fields">
+        <label>Profile Avatar</label>
+        <p>Pilih avatar bawaan atau unggah gambar sendiri.</p>
+        <div class="edit-avatar-preview-row">
+          <div id="edit-avatar-preview" class="edit-avatar-preview" aria-label="Preview avatar"></div>
+          <div class="edit-avatar-preview-copy">
+            <strong>Avatar Preview</strong><span>Perubahan akan diterapkan setelah Save Changes.</span>
+          </div>
+        </div>
+        <div class="choice-grid avatar-grid edit-avatar-grid" id="edit-avatar-choice-grid" aria-label="Pilihan avatar">
+        </div>
+        <label>Profile Banner</label>
+        <p>
+          Pilih banner bawaan untuk menghias profilmu. Kamu bisa menggantinya
+          kapan saja.
+        </p>
+        <div class="banner-choice-grid" id="banner-choice-grid" role="radiogroup" aria-label="Pilih banner profil">
+        </div>
+        <label for="display-name-input">Display Name</label>
+        <input id="display-name-input" type="text" maxlength="32" placeholder="Masukkan display name"
+          autocomplete="nickname" />
+        <p>Nama ini akan ditampilkan di sidebar dan Dashboard.</p>
+        <label for="username-readonly">Username</label>
+        <input id="username-readonly" type="text" readonly />
+        <p>Username digunakan untuk login dan tidak diubah di sini.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="save-btn" id="save-profile" type="button">
+          SAVE CHANGES
+        </button>
+      </div>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="avatar-modal" aria-hidden="true">
+    <section class="selection-modal" role="dialog" aria-modal="true" aria-labelledby="avatar-modal-title">
+      <div class="modal-heading">
+        <h2 id="avatar-modal-title">AVATAR</h2>
+        <button class="close-modal" type="button" data-close="avatar-modal" aria-label="Close">
+          ×
+        </button>
+      </div>
+      <div class="modal-scroll-area">
+        <div class="choice-grid avatar-grid" id="avatar-grid"></div>
+      </div>
+      <input id="avatar-upload" type="file" accept="image/*" hidden />
+      <div class="modal-actions">
+        <button class="save-btn" id="save-avatar" type="button">SAVE</button>
+      </div>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="badge-modal" aria-hidden="true">
+    <section class="selection-modal" role="dialog" aria-modal="true" aria-labelledby="badge-modal-title">
+      <div class="modal-heading">
+        <div class="badge-modal-title-wrap">
+          <h2 id="badge-modal-title">BADGE</h2>
+          <p>Kumpulkan badge dari modul, challenge, dan aktivitas komunitas.</p>
+        </div><span class="badge-selected-count" id="badge-selected-count">0 / 5 dipilih</span>
+        <button class="close-modal" type="button" data-close="badge-modal" aria-label="Close">
+          ×
+        </button>
+      </div>
+      <div class="modal-scroll-area">
+        <div class="choice-grid badge-grid" id="badge-grid"></div>
+      </div>
+      <div class="modal-actions badge-modal-actions">
+        <button class="save-btn" id="save-badge" type="button">Simpan</button>
+      </div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/dashboard.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

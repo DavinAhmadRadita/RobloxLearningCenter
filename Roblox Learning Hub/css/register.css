@@ -1,0 +1,279 @@
+.register-shell {
+  min-height: 820px;
+}
+
+.register-hero {
+  min-height: 175px;
+  padding-top: 28px;
+}
+
+.register-hero h1 {
+  margin-bottom: 22px;
+  max-width: 700px;
+  font-size: clamp(30px, 3.4vw, 48px);
+}
+
+.register-hero p {
+  max-width: 580px;
+}
+
+.register-hero .character {
+  bottom: -3px;
+  font-size: 140px;
+}
+
+.register-card {
+  padding: 16px 30px 22px;
+}
+
+.register-card h2 {
+  margin-bottom: 28px;
+  font-size: 38px;
+}
+
+.register-card form {
+  gap: 13px;
+}
+
+.register-card .input-wrap {
+  height: 61px;
+}
+
+.register-card .primary-button {
+  margin-top: 3px;
+}
+
+.register-card .switch-text {
+  margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+  .auth-page {
+    padding: 18px 12px;
+    align-items: start;
+  }
+
+  .auth-shell {
+    border-radius: 24px;
+    padding: 22px 18px;
+  }
+
+  .auth-brand .brand {
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .auth-brand .roblox-mark {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .auth-hero {
+    min-height: 175px;
+    padding-top: 30px;
+  }
+
+  .auth-hero h1 {
+    max-width: 100%;
+    font-size: clamp(27px, 7vw, 38px);
+    margin-bottom: 14px;
+  }
+
+  .auth-hero p {
+    max-width: 75%;
+    font-size: 17px;
+  }
+
+  .character {
+    right: -20px;
+    width: 120px;
+    font-size: 86px;
+    bottom: 2px;
+  }
+
+  .auth-card {
+    border-radius: 24px;
+    padding: 24px 18px;
+  }
+
+  .auth-card h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .auth-card form {
+    gap: 14px;
+  }
+
+  .input-wrap {
+    height: 54px;
+    border-radius: 16px;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .input-wrap input {
+    font-size: 16px;
+  }
+
+  .primary-button {
+    height: 54px;
+    font-size: 26px;
+    border-radius: 15px;
+  }
+
+  .switch-text {
+    margin-top: 25px;
+    font-size: 16px;
+  }
+
+  .register-shell {
+    min-height: 0;
+  }
+
+  .register-hero {
+    min-height: 150px;
+  }
+
+  .register-hero h1 {
+    font-size: clamp(25px, 6vw, 35px);
+  }
+
+  .register-hero p {
+    max-width: 70%;
+  }
+
+  .register-hero .character {
+    font-size: 80px;
+  }
+
+  .register-card {
+    padding: 18px;
+  }
+
+  .register-card h2 {
+    font-size: 29px;
+    margin-bottom: 20px;
+  }
+
+  .register-card form {
+    gap: 11px;
+  }
+
+  .register-card .input-wrap {
+    height: 52px;
+  }
+}
+
+.register-shell {
+  min-height: 0;
+}
+
+.register-hero {
+  min-height: 128px;
+}
+
+.register-hero h1 {
+  font-size: clamp(27px, 2.9vw, 38px);
+}
+
+.register-hero .character {
+  font-size: 100px;
+}
+
+.register-card {
+  padding: 18px 26px 20px;
+}
+
+.register-card h2 {
+  font-size: 31px;
+  margin-bottom: 18px;
+}
+
+.register-card form {
+  gap: 10px;
+}
+
+.register-card .input-wrap {
+  height: 49px;
+}
+
+.register-card .primary-button {
+  margin-top: 0;
+}
+
+.register-card .switch-text {
+  margin-top: 13px;
+}
+
+.register-hero .character {
+  width: 138px;
+  height: 172px;
+  bottom: -10px;
+}
+
+@media (max-width: 760px) {
+  .character {
+    width: 112px;
+    height: 108px;
+    right: -5px;
+    bottom: -8px;
+  }
+
+  .register-hero .character {
+    width: 94px;
+    height: 126px;
+    bottom: -8px;
+  }
+}
+
+.auth-brand .brand {
+  cursor: default;
+  pointer-events: none;
+}
+
+.username-feedback {
+  display: block;
+  min-height: 15px;
+  margin-top: 5px;
+  font: 500 12px/1.4 Inter, sans-serif;
+  color: #aab5c8;
+}
+
+.username-feedback.is-valid {
+  color: #36d399;
+}
+
+.username-feedback.is-invalid {
+  color: #ff6b75;
+}
+
+.nav-icon [data-lucide],
+.nav-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.9;
+  flex: 0 0 24px;
+}
+
+.nav-icon img {
+  display: none;
+}
+
+.toggle-password [data-lucide],
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.input-icon [data-lucide],
+.input-icon svg,
+.field-icon [data-lucide],
+.field-icon svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.9;
+  flex: 0 0 auto;
+}
