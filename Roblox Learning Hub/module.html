@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modul | Roblox Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/guest-gate.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/module.css" />
+</head>
+
+<body data-page="Modul">
+  <div id="dashboard-view" class="app-shell dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand dashboard-brand" aria-label="Roblox Learning Center">
+        <span class="roblox-mark"><span></span></span>
+        <span class="brand-name">ROBLOX LEARNING<br />CENTER</span>
+      </div>
+      <button class="profile profile-link" id="profile" type="button" aria-label="Open profile">
+        <div class="avatar" id="avatar">U</div>
+        <div class="profile-name" id="profile-name">USERNAME</div>
+        <div class="profile-handle" id="profile-handle">@username</div>
+      </button>
+      <nav class="navigation" aria-label="Dashboard navigation">
+        <button class="nav-item" type="button" data-page="Dashboard">
+          <span class="nav-icon"><i data-lucide="house" aria-hidden="true"></i></span><span>DASHBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Modul">
+          <span class="nav-icon"><i data-lucide="book-open" aria-hidden="true"></i></span><span>MODUL</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Leaderboard">
+          <span class="nav-icon"><i data-lucide="trophy" aria-hidden="true"></i></span><span>LEADERBOARD</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Forum">
+          <span class="nav-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>FORUM</span>
+        </button>
+        <button class="nav-item" type="button" data-page="Challenges">
+          <span class="nav-icon"><i data-lucide="flag" aria-hidden="true"></i></span><span>CHALLENGES</span>
+        </button>
+      </nav>
+      <button class="login-button" id="dashboard-auth-button" type="button">
+        MASUK/DAFTAR
+      </button>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1>MODUL</h1>
+      </header>
+      <section class="module-page" aria-labelledby="module-page-title">
+        <div class="module-intro">
+          <div>
+            <p class="module-eyebrow">
+              <i data-lucide="graduation-cap" aria-hidden="true"></i> LEARNING
+              CENTER
+            </p>
+            <h2 id="module-page-title">Modul Pembelajaran</h2>
+            <p class="module-subtitle">
+              Pelajari Roblox Studio dari dasar, satu langkah setiap kali.
+            </p>
+          </div>
+          <div class="module-intro-icon" aria-hidden="true">
+            <i data-lucide="book-open"></i>
+          </div>
+        </div>
+
+        <div class="module-summary" aria-label="Ringkasan modul">
+          <div class="module-stat">
+            <span class="module-stat-icon blue"><i data-lucide="layers"></i></span>
+            <div><strong id="total-module-count">0</strong><span>Total Modul</span></div>
+          </div>
+          <div class="module-stat">
+            <span class="module-stat-icon green"><i data-lucide="circle-check"></i></span>
+            <div>
+              <strong id="completed-module-count">0</strong><span>Modul Selesai</span>
+            </div>
+          </div>
+          <div class="module-stat">
+            <span class="module-stat-icon violet"><i data-lucide="chart-no-axes-column-increasing"></i></span>
+            <div>
+              <strong id="overall-module-progress">0%</strong><span>Progres Belajar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-list-heading">
+          <div>
+            <h3>Daftar Modul</h3>
+            <p>Pilih modul untuk melihat materi di dalamnya.</p>
+          </div>
+          <div class="module-heading-actions"><button class="admin-add-module" id="admin-add-module" type="button"
+              hidden><i data-lucide="plus"></i> Tambah Modul</button><span class="module-list-count"
+              id="module-list-count">0 MODUL</span></div>
+        </div>
+
+        <div class="module-list" id="module-list" aria-live="polite">
+          <div class="empty-state module-empty-state">
+            <i data-lucide="book-open" aria-hidden="true"></i>
+            <h3>Belum ada modul pembelajaran</h3>
+            <p>Modul akan muncul di sini setelah admin menambahkannya.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <div class="admin-module-backdrop" id="admin-module-modal" hidden>
+    <section class="admin-module-dialog" role="dialog" aria-modal="true" aria-labelledby="admin-module-modal-title">
+      <header class="admin-module-modal-head">
+        <div class="admin-modal-icon"><i data-lucide="book-open"></i></div>
+        <div>
+          <h2 id="admin-module-modal-title">Tambah Modul</h2>
+          <p>Isi informasi modul dan tautan satu video pembelajaran.</p>
+        </div>
+        <button type="button" class="admin-modal-close" data-close-admin-module aria-label="Tutup"><i
+            data-lucide="x"></i></button>
+      </header>
+      <form id="admin-module-form" novalidate>
+        <div class="admin-module-modal-body">
+          <label class="admin-field"><span class="admin-field-label">Judul Modul <b>*</b></span><input id="admin-module-title" maxlength="100"
+              placeholder="Contoh: Pengenalan Roblox"><small class="admin-field-error" data-error-for="admin-module-title" hidden></small></label>
+          <div class="admin-form-two">
+            <label class="admin-field"><span class="admin-field-label">Level <b>*</b></span><select id="admin-module-level">
+                <option value="">Pilih level</option>
+                <option>Pemula</option>
+                <option>Menengah</option>
+                <option>Lanjutan</option>
+              </select><small class="admin-field-error" data-error-for="admin-module-level" hidden></small></label>
+            <label class="admin-field"><span class="admin-field-label">URL Video <b>*</b></span><input id="admin-module-video" type="url"
+                placeholder="https://www.youtube.com/watch?v=..."><small class="admin-field-error" data-error-for="admin-module-video" hidden></small></label>
+          </div>
+          <label class="admin-field"><span class="admin-field-label">Deskripsi Modul <b>*</b></span><textarea id="admin-module-description"
+              maxlength="300" rows="4" placeholder="Jelaskan isi dan tujuan pembelajaran..."></textarea><small
+              class="admin-char-count" id="admin-description-count">0/300</small><small class="admin-field-error" data-error-for="admin-module-description" hidden></small></label>
+          <p class="admin-module-form-error" id="admin-module-error" hidden></p>
+        </div>
+        <footer class="admin-module-modal-footer"><button type="button" class="admin-cancel"
+            data-close-admin-module>Batal</button><button type="submit" class="admin-save"><i data-lucide="check"></i>
+            Simpan Modul</button></footer>
+      </form>
+    </section>
+  </div>
+
+
+  <div class="module-delete-backdrop" id="module-delete-modal" hidden>
+    <section class="module-delete-dialog" role="alertdialog" aria-modal="true" aria-labelledby="module-delete-title"
+      aria-describedby="module-delete-description">
+      <header class="module-delete-head">
+        <span class="module-delete-icon"><i data-lucide="trash-2" aria-hidden="true"></i></span>
+        <button type="button" class="module-delete-close" data-cancel-delete aria-label="Tutup"><i
+            data-lucide="x"></i></button>
+      </header>
+      <div class="module-delete-content">
+        <h2 id="module-delete-title">Hapus Modul</h2>
+        <p class="module-delete-question">Apakah kamu yakin ingin menghapus modul ini?</p>
+        <p id="module-delete-description">Modul <strong id="module-delete-name">—</strong> akan dihapus beserta tautan
+          video pembelajarannya. Tindakan ini tidak dapat dibatalkan.</p>
+      </div>
+      <footer class="module-delete-footer">
+        <button type="button" class="module-delete-cancel" data-cancel-delete>Batal</button>
+        <button type="button" class="module-delete-confirm" id="confirm-delete-module"><i data-lucide="trash-2"></i>
+          Hapus Modul</button>
+      </footer>
+    </section>
+  </div>
+
+  <div class="lesson-video-modal" id="lesson-video-modal" hidden>
+    <button class="lesson-video-backdrop" type="button" data-close-lesson aria-label="Tutup video"></button>
+    <section class="lesson-video-dialog" role="dialog" aria-modal="true" aria-labelledby="lesson-video-title">
+      <header class="lesson-video-header">
+        <h2 id="lesson-video-title">Judul Pelajaran</h2>
+        <button class="lesson-video-close" type="button" data-close-lesson aria-label="Tutup popup">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="lesson-video-frame" id="lesson-video-frame">
+        <div class="lesson-video-placeholder" id="lesson-video-placeholder">
+          <i data-lucide="play-circle" aria-hidden="true"></i>
+          <span>Video untuk pelajaran ini belum ditautkan.</span>
+        </div>
+        <iframe id="lesson-video-iframe" title="Video pembelajaran"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen hidden></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/dashboard.js?v=delete-popup-20261027-2"></script>
+  <script src="js/module-admin.js?v=db-modules-20261116"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="js/guest-gate.js"></script>
+  <script src="js/admin-nav.js?v=guest-nav-fix-20261124"></script>
+  <script src="js/report-nav.js?v=guest-nav-fix-20261124"></script>
+</body>
+
+</html>

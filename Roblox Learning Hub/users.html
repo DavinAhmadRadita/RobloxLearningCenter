@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelola Pengguna | Roblox Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/users.css">
+</head>
+
+<body data-page="Kelola Pengguna">
+  <div id="dashboard-view" class="app-shell dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand dashboard-brand" aria-label="Roblox Learning Center"><span
+          class="roblox-mark"><span></span></span><span class="brand-name">ROBLOX LEARNING<br> CENTER</span></div>
+      <button class="profile profile-link" id="profile" type="button" aria-label="Buka profil">
+        <div class="avatar" id="avatar">U</div>
+        <div class="profile-name" id="profile-name">USERNAME</div>
+        <div class="profile-handle" id="profile-handle">@username</div>
+      </button>
+      <nav class="navigation" aria-label="Navigasi utama">
+        <a class="nav-item" href="dashboard.html"><span class="nav-icon"><i
+              data-lucide="house"></i></span><span>DASHBOARD</span></a>
+        <a class="nav-item" href="module.html"><span class="nav-icon"><i
+              data-lucide="book-open"></i></span><span>MODUL</span></a>
+        <a class="nav-item" href="leaderboard.html"><span class="nav-icon"><i
+              data-lucide="trophy"></i></span><span>LEADERBOARD</span></a>
+        <a class="nav-item" href="forum.html"><span class="nav-icon"><i
+              data-lucide="messages-square"></i></span><span>FORUM</span></a>
+        <a class="nav-item" href="challenges.html"><span class="nav-icon"><i
+              data-lucide="flag"></i></span><span>CHALLENGES</span></a>
+      </nav>
+      <button class="login-button" id="users-logout" type="button">LOGOUT</button>
+    </aside>
+    <main class="main-content users-main">
+      <header class="users-header">
+        <div>
+          <div class="eyebrow"><i data-lucide="shield-check"></i> ADMIN PANEL</div>
+          <h1>Kelola Pengguna</h1>
+          <p>Kelola role pengguna Roblox Learning Center.</p>
+        </div>
+        <form id="user-search-form" class="user-search"><label class="sr-only" for="user-search-input">Cari username
+            pengguna</label><i data-lucide="search"></i><input id="user-search-input"
+            placeholder="Cari username pengguna..." autocomplete="off"><button type="submit">Cari</button></form>
+      </header>
+      <section class="user-stats">
+        <article class="user-stat"><span class="stat-icon blue"><i data-lucide="users"></i></span>
+          <div><strong id="count-total">—</strong><span>Total Pengguna</span></div>
+        </article>
+        <article class="user-stat"><span class="stat-icon red"><i data-lucide="crown"></i></span>
+          <div><strong id="count-admin">—</strong><span>Admin</span></div>
+        </article>
+        <article class="user-stat"><span class="stat-icon purple"><i data-lucide="shield-check"></i></span>
+          <div><strong id="count-moderator">—</strong><span>Moderator</span></div>
+        </article>
+        <article class="user-stat"><span class="stat-icon green"><i data-lucide="graduation-cap"></i></span>
+          <div><strong id="count-learner">—</strong><span>Learner</span></div>
+        </article>
+      </section>
+      <section id="search-results" class="search-results" hidden>
+        <div class="section-heading">
+          <div>
+            <h2>Hasil Pencarian</h2>
+            <p id="search-summary">Pengguna yang cocok dengan username.</p>
+          </div><button id="clear-search" class="subtle-button" type="button">Hapus pencarian</button>
+        </div>
+        <div id="search-user-list"></div>
+      </section>
+      <section class="role-section">
+        <div class="section-heading">
+          <div class="section-title-icon red"><i data-lucide="crown"></i></div>
+          <div>
+            <h2>Daftar Admin <span id="admin-list-count">(0)</span></h2>
+            <p>Pengguna dengan role Admin dapat mengelola seluruh fitur dan pengguna.</p>
+          </div>
+        </div>
+        <div class="role-table-wrap" id="admin-list"></div>
+      </section>
+      <section class="role-section">
+        <div class="section-heading">
+          <div class="section-title-icon purple"><i data-lucide="shield-check"></i></div>
+          <div>
+            <h2>Daftar Moderator <span id="moderator-list-count">(0)</span></h2>
+            <p>Moderator membantu memoderasi forum dan konten.</p>
+          </div>
+        </div>
+        <div class="role-table-wrap" id="moderator-list"></div>
+      </section>
+      <div id="users-toast" class="users-toast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+  <div class="role-modal-backdrop" id="role-modal" hidden>
+    <section class="role-modal" role="dialog" aria-modal="true" aria-labelledby="role-modal-title">
+      <button class="modal-close" id="role-modal-close" aria-label="Tutup" type="button"><i
+          data-lucide="x"></i></button>
+      <h2 id="role-modal-title">Ubah Role Pengguna</h2>
+      <p class="modal-intro">Pilih role baru untuk akun ini.</p>
+      <div id="modal-user-summary" class="modal-user-summary"></div>
+      <div class="current-role">Role saat ini <strong id="modal-current-role">Learner</strong></div>
+      <label for="new-role">Pilih Role Baru</label><select id="new-role">
+        <option value="learner">Learner</option>
+        <option value="moderator">Moderator</option>
+        <option value="admin">Admin</option>
+      </select>
+      <p class="role-help" id="role-help">Learner dapat belajar modul dan mengikuti challenge.</p>
+      <div class="modal-actions"><button type="button" class="subtle-button" id="role-cancel">Batal</button><button
+          type="button" class="primary-button" id="role-save"><i data-lucide="save"></i> Simpan Perubahan</button></div>
+    </section>
+  </div>
+  <script src="js/users.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script src="js/users-sidebar.js"></script>
+  <script src="js/report-nav.js?v=guest-nav-fix-20261124"></script>
+  <script src="js/admin-nav.js?v=guest-nav-fix-20261124"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Logs | Roblox Learning Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/users.css" />
+    <link rel="stylesheet" href="css/report-logs.css" />
+  </head>
+
+  <body data-page="Report Logs">
+    <div id="dashboard-view" class="app-shell dashboard-shell">
+      <aside class="sidebar">
+        <div class="brand dashboard-brand" aria-label="Roblox Learning Center">
+          <span class="roblox-mark"><span></span></span
+          ><span class="brand-name"
+            >ROBLOX LEARNING<br />
+            CENTER</span
+          >
+        </div>
+        <button
+          class="profile profile-link"
+          id="profile"
+          type="button"
+          aria-label="Buka profil"
+        >
+          <div class="avatar" id="avatar">U</div>
+          <div class="profile-name" id="profile-name">USERNAME</div>
+          <div class="profile-handle" id="profile-handle">@username</div>
+        </button>
+        <nav class="navigation" aria-label="Navigasi utama">
+          <a class="nav-item" href="dashboard.html"
+            ><span class="nav-icon"><i data-lucide="house"></i></span
+            ><span>DASHBOARD</span></a
+          >
+          <a class="nav-item" href="module.html"
+            ><span class="nav-icon"><i data-lucide="book-open"></i></span
+            ><span>MODUL</span></a
+          >
+          <a class="nav-item" href="leaderboard.html"
+            ><span class="nav-icon"><i data-lucide="trophy"></i></span
+            ><span>LEADERBOARD</span></a
+          >
+          <a class="nav-item" href="forum.html"
+            ><span class="nav-icon"><i data-lucide="messages-square"></i></span
+            ><span>FORUM</span></a
+          >
+          <a class="nav-item" href="challenges.html"
+            ><span class="nav-icon"><i data-lucide="flag"></i></span
+            ><span>CHALLENGES</span></a
+          >
+        </nav>
+        <button class="login-button" id="report-logout" type="button">
+          LOGOUT
+        </button>
+      </aside>
+      <main class="main-content report-main">
+        <header class="report-header">
+          <div>
+            <div class="report-eyebrow">
+              <i data-lucide="shield-check"></i> MODERATION CENTER
+            </div>
+            <h1>Report Logs</h1>
+            <p>
+              Daftar konten yang telah dilaporkan oleh minimal 5 pengguna
+              berbeda.
+            </p>
+          </div>
+        </header>
+        <div class="report-notice">
+          <i data-lucide="info"></i
+          ><span
+            >Laporan akan muncul di halaman ini setelah satu konten dilaporkan
+            oleh minimal 5 akun berbeda.</span
+          >
+        </div>
+        <section class="report-stats">
+          <article class="report-stat red">
+            <span class="report-stat-icon"><i data-lucide="flag"></i></span>
+            <div>
+              <strong id="report-total">0</strong><span>Total Laporan</span>
+            </div>
+          </article>
+          <article class="report-stat green">
+            <span class="report-stat-icon"><i data-lucide="users"></i></span>
+            <div>
+              <strong id="reporters-total">0</strong><span>Total Pelapor</span>
+            </div>
+          </article>
+          <article class="report-stat purple">
+            <span class="report-stat-icon"><i data-lucide="layers"></i></span>
+            <div><strong>5</strong><span>Ambang Minimal Pelapor</span></div>
+          </article>
+        </section>
+        <section class="report-workspace">
+          <div class="report-list-panel">
+            <div class="report-tools">
+              <label class="report-search"
+                ><i data-lucide="search"></i
+                ><input
+                  id="report-search"
+                  type="search"
+                  placeholder="Cari pengguna atau konten..."
+                  aria-label="Cari laporan" /></label
+              ><label class="report-sort"
+                ><i data-lucide="arrow-up-down"></i
+                ><select id="report-sort" aria-label="Urutkan laporan">
+                  <option value="new">Terbaru</option>
+                  <option value="many">Pelapor terbanyak</option>
+                </select></label
+              >
+            </div>
+            <div class="report-list" id="report-list">
+              <div class="report-empty">
+                <span><i data-lucide="inbox"></i></span
+                ><strong>Belum ada laporan</strong>
+                <p>
+                  Konten akan muncul di sini setelah menerima laporan dari
+                  minimal 5 pengguna berbeda.
+                </p>
+              </div>
+            </div>
+            <div class="report-pagination" id="report-pagination" hidden></div>
+          </div>
+          <aside class="report-detail-panel" id="report-detail" hidden>
+            <div class="report-detail-heading">
+              <span><i data-lucide="file-text"></i></span>
+              <h2>Detail Laporan</h2>
+            </div>
+            <div class="report-detail-empty">
+              <i data-lucide="mouse-pointer-click"></i
+              ><strong>Pilih laporan untuk melihat detail</strong>
+              <p>
+                Informasi konten, daftar pelapor, dan alasan laporan akan
+                ditampilkan di sini.
+              </p>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      if (window.lucide) lucide.createIcons();
+    </script>
+    <script src="js/users-sidebar.js"></script>
+    <script src="js/report-logs.js"></script>
+  </body>
+</html>
